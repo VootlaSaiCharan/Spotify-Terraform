@@ -1,26 +1,25 @@
-# resource "spotify_playlist" "Devotional" {
-#   name        = "Devotional"
-#   description = "Isha Music"
-#   tracks = ["07dLDdQaGtCzRksu1phXbG"]
-# }
+resource "spotify_playlist" "<Play_list_name>" {
+  name        = "<Play_list_name>"
+  description = "<Music_album_description>"
+  tracks = ["<Music_list_track_ID>"]
+}
 
-# resource "spotify_playlist" "old_bollywood_duets" {
-#   name        = "old bollywood duets"
-#   description = "My playlist is so awesome"
-#   public      = false
+resource "spotify_playlist" "<Play_list_name>" {
+  name        = "<Play_list_name>"
+  description = "<Music_album_description>"
+  public      = false
+  tracks = ["<Music_list_track_ID>"]
+}
 
-#   tracks = ["3wnrSZ4uUY6WhejiTFI2UA"]
-# }
-
-data "spotify_search_track" "RaghuKunche" {
-  artist = "Raghu Kunche"
+data "spotify_search_track" "<artist_name>" {
+  artist = "<artist_name>"
   # limit = 5
 }
 
-resource "spotify_playlist" "My_Fav_RaghuKunche_Music" {
-  name = "My_Fav_RaghuKunche_Music"
+resource "spotify_playlist" "<Play_List_Name>" {
+  name = "Play_List_Name"
 
   tracks = [
-    data.spotify_search_track.RaghuKunche.tracks[0].id,
+    data.spotify_search_track.<artist_name>.tracks[0].id,
   ]
 }
